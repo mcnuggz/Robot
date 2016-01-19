@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Robot
 {
@@ -22,6 +22,7 @@ namespace Robot
             "Laser Sniper Rifle"
 
         };
+
         public void EquipWeapon()
         {
             Console.Clear();
@@ -80,8 +81,10 @@ namespace Robot
                     break;
                 default:
                     Console.WriteLine("Fisticuffs it is then!");
+                    equippedItem = "Fist";
                     break;
             }
+            Thread.Sleep(2000);
             Console.Clear();
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Robot
 {
@@ -45,9 +45,11 @@ namespace Robot
                     equippedItem = "Tool: Pliers";
                     break;
                 default:
-                    Console.WriteLine("No tool selected");
+                    Console.WriteLine("Fisticuffs it is then!");
+                    equippedItem = "Fist";
                     break;
             }
+            Thread.Sleep(2000);
             Console.Clear();
         }
     }

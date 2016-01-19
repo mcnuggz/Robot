@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Robot
 {
@@ -15,7 +15,7 @@ namespace Robot
         private int maxCoverage = 270;
         private int nonCoverage = 0;
 
-        private List<string> headList = new List<string>() { "Sensory model, Standard model, Defensive model" };
+        private List<string> headList = new List<string>() { "[Sensory] model, [Standard] model, [Defensive] model" };
         public Head(string name) : base(name)
         {
             PickHeadModel();
@@ -53,7 +53,9 @@ namespace Robot
                     Console.WriteLine("Alright...no head unit. Odd choice, but hey it's your robot");
                     sensorCoverage = nonCoverage;
                     break;
+                    
             }
+            Thread.Sleep(2000);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Robot
 {
@@ -10,7 +10,7 @@ namespace Robot
     {
         public string model;
         public bool poweredOn = false;
-        List<string> bodyModels = new List<string>() { "Light body", "Standard body", "Heavy body" };
+        List<string> bodyModels = new List<string>() { "[Light] body", "[Standard] body", "[Heavy] body" };
         public Body(string name) : base(name)
         {
             PickBodyChassis();
@@ -45,6 +45,7 @@ namespace Robot
                     PickBodyChassis();
                     break;
             }
+            Thread.Sleep(2000);
             Console.Clear();
         }
 
