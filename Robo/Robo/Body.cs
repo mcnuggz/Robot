@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Robo
+namespace Robot
 {
-    public class Assembly
+    public class Body : Part
     {
-        public void RoboAssembly()
+        public string model;
+        public Body(string name) : base(name)
         {
-
+            Name = model;
         }
     }
 }

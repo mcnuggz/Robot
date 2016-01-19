@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arm.cs" />
-    <Compile Include="Assembly.cs" />
+    <Compile Include="Body.cs" />
     <Compile Include="Head.cs" />
     <Compile Include="Leg.cs" />
     <Compile Include="Part.cs" />
