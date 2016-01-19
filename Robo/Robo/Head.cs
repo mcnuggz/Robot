@@ -22,26 +22,31 @@ namespace Robot
             Name = model;
         }
 
-        public string PickHeadModel()
+        public void PickHeadModel()
         {
-            Console.WriteLine("Select your head model");
+            Console.Clear();
+            Console.WriteLine("Select your head model: ");
             foreach (string heads in headList)
             {
-                Console.WriteLine(heads);
+                Console.WriteLine("{0} ",heads);
             }
+            Console.WriteLine("");
             string userHead = Console.ReadLine().ToLower();
             switch (userHead)
             {
-                case "sensory head":
-                    Console.WriteLine("Sensors and optics calibrated. Covering {0} around unit", maxCoverage);
+                case "sensory":
+                    Console.WriteLine("Sensors and optics calibrated. Covering {0} degrees around unit", maxCoverage);
+                    model = "Sensory head unit";
                     sensorCoverage = maxCoverage;
                     break;
-                case "standard model":
-                    Console.WriteLine("Optics calibrated. moving out. Covering {0} in front of unit", midCoverage);
+                case "standard":
+                    Console.WriteLine("Optics calibrated. Covering {0} degrees in front of unit", midCoverage);
+                    model = "Standard head unit";
                     sensorCoverage = midCoverage;
                     break;
-                case "defensive model":
-                    Console.WriteLine("Shields online, optics calibrated. Covering {0} in front of unit", minCoverage);
+                case "defensive":
+                    Console.WriteLine("Shields online, optics calibrated. Covering {0} degrees in front of unit", minCoverage);
+                    model = "Defensive head unit";
                     sensorCoverage = minCoverage;
                     break;
                 default:
@@ -49,8 +54,6 @@ namespace Robot
                     sensorCoverage = nonCoverage;
                     break;
             }
-            model = userHead;
-            return model;
         }
     }
 }

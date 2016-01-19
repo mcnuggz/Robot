@@ -21,31 +21,33 @@ namespace Robot
             AttachLegs();
         }
 
-        public string AttachLegs()
+        public void AttachLegs()
         {
-            Console.WriteLine("Do you want regular legs, booster legs, or tracked legs?");
+            Console.Clear();
+            Console.WriteLine("Do you want Standard legs, Booster legs, or Tank Treads?");
             string legInput = Console.ReadLine().ToLower();
             switch (legInput)
             {
-                case "regular legs":
+                case "standard legs":
                     Console.WriteLine("Legs attached");
+                    model = "Standard Legs";
                     legCount = 2;
                     movementSpeed = averageSpeed;
                     break;
                 case "booster legs":
                     Console.WriteLine("Fuel levels optimal.");
+                    model = "Booster Legs";
                     movementSpeed = fastSpeed;
                     break;
-                case "tracked legs":
-                    Console.WriteLine("All-terrain chassis equipped.");
+                case "tank treads":
+                    Console.WriteLine("All-terrain treads equipped.");
+                    model = "Tank treads";
                     movementSpeed = slowSpeed;
                     break;
                 default:
                     Console.WriteLine("No legs equipped.");
                     break;
             }
-            model = legInput;
-            return model;
         }
     }
 }

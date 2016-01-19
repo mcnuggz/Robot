@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace Robot
 {
-    public class Part
+    interface IPowerSource
     {
-        public string Name;
-        public Part(string name)
-        {
-            Name = name;
-        }
+        void IsPoweredOn();
     }
 }
